@@ -8,6 +8,8 @@ namespace Firestore_Library {
 
             FirestoreDb db = FirestoreDb.Create(projectName);
 
+            
+
             Query docRef = db.Collection("Games").Document(collectionName).Collection("Players").OrderBy("score");
 
             QuerySnapshot snapshot = await docRef.GetSnapshotAsync();

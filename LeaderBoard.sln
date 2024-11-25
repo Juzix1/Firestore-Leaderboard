@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaderBoard", "LeaderBoard\LeaderBoard.csproj", "{EC26E447-D8E0-475D-93D0-8D513E73F1AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeaderBoard", "LeaderBoard\LeaderBoard.csproj", "{EC26E447-D8E0-475D-93D0-8D513E73F1AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firestore Library", "Firestore Library\Firestore Library.csproj", "{8F07E7F1-92AF-463D-AF51-BE815E661437}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Firestore Library", "Firestore Library\Firestore Library.csproj", "{8F07E7F1-92AF-463D-AF51-BE815E661437}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{AEEB389E-1E25-4FE1-A6A3-B19ABA91FF8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8F07E7F1-92AF-463D-AF51-BE815E661437}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F07E7F1-92AF-463D-AF51-BE815E661437}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F07E7F1-92AF-463D-AF51-BE815E661437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEEB389E-1E25-4FE1-A6A3-B19ABA91FF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEEB389E-1E25-4FE1-A6A3-B19ABA91FF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEEB389E-1E25-4FE1-A6A3-B19ABA91FF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEEB389E-1E25-4FE1-A6A3-B19ABA91FF8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
