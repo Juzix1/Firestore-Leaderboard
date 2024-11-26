@@ -10,7 +10,8 @@ using Google.Cloud.Firestore.V1;
 public class Program {
     private static async Task Main(string[] args) {
         var cts = new CancellationTokenSource();
-
+        while (true) {
+        Console.Clear();
         Console.WriteLine("Leaderboard");
         Console.WriteLine("1. Add Game");
         Console.WriteLine("2. Add Player to the Game");
@@ -21,8 +22,7 @@ public class Program {
 
         int wybor = Convert.ToInt32(Console.ReadLine());
 
-        while (true)
-        {
+
             switch (wybor)
             {
                 case 1:

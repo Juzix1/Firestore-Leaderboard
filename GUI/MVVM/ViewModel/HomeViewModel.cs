@@ -32,7 +32,6 @@ namespace GUI.MVVM.ViewModel {
                         foreach (DocumentSnapshot docsnap in snapshot.Documents) {
                             Player player = docsnap.ConvertTo<Player>();
                             player.timeString = getTimePart(player.time.ToString());
-                            Debug.WriteLine(player.time);
                             App.Current.Dispatcher.Invoke(() => Players.Add(player));
                         }
                     });
