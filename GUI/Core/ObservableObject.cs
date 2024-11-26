@@ -5,12 +5,16 @@ using System.Runtime.CompilerServices;
 
 namespace GUI.Core
 {
-    class ObservableObject : INotifyPropertyChanged {
+    public class ObservableObject : INotifyPropertyChanged {
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        protected void OnPropertChanged([CallerMemberName] string name = null) {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        protected void OnPropertyChanged(string propertyName) {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        //protected void OnPropertChanged([CallerMemberName] string name = null) {
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        //}
     }
 }

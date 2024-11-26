@@ -17,5 +17,7 @@ namespace Firestore_Library {
         [FirestoreProperty(nameof(time))]
         public Timestamp time { get; set; }
 
+        public string timeString { get; set; }
+
     }
 }

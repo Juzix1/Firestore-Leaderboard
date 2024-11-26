@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Firestore Library\Firestore Library.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\mario.png" />
   </ItemGroup>
 
