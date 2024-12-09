@@ -79,7 +79,6 @@ namespace Firestore_Library {
                 Console.WriteLine(ex.Message);
             }
         }
-
         public static async Task addGame(string gameName)
         {
             FirestoreDb db = FirestoreDb.Create(projectName);
@@ -90,9 +89,40 @@ namespace Firestore_Library {
                 await docRef.SetAsync(gameName);
                 Console.WriteLine($"Dodano gre {gameName} do bazy danych");
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Console.WriteLine("Dodanie gry do bazy danych nie powiodlo sie pomyslnie. Prawdopodobnie taka gra już istnieje");
+            }
+        }
+
+        public static async Task updatePlayerScoreByGame(string gameName, string playerID, int score)
+        {
+            FirestoreDb db = FirestoreDb.Create(projectName);
+
+            try
+            {
+                DocumentReference docRef = db.Collection("Games").Document(gameName).Collection("Players").Document(playerID);
+                await docRef.UpdateAsync("score", score);
+                Console.WriteLine($"Zmieniono wynik gracza {playerID} na {score}");
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine("Zmiana wyniku gracza nie powiodla sie pomyslnie");
+            }
+        }
+        public static async Task updatePlayerTimeByGame(string gameName, string playerID, Timestamp timestamp)
+        {
+            FirestoreDb db = FirestoreDb.Create(projectName);
+
+            try
+            {
+                DocumentReference docRef = db.Collection("Games").Document(gameName).Collection("Players").Document(playerID);
+                await docRef.UpdateAsync("time", timestamp);
+                Console.WriteLine($"Zmieniono czas gracza {playerID} na {timestamp}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Zmiana czasu gracza nie powiodla sie pomyslnie");
             }
         }
 

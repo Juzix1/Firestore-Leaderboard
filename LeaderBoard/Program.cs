@@ -17,6 +17,7 @@ public class Program {
         Console.WriteLine("2. Add Player to the Game");
         Console.WriteLine("3. Show Players For Game");
         Console.WriteLine("4. Delete Player by Game");
+        Console.WriteLine("5. Update Player by Game");
 
         Timestamp timestamp = Timestamp.FromDateTime(DateTime.UtcNow);
 
@@ -57,6 +58,7 @@ public class Program {
                         }
                         Player player1 = new Player
                         {
+
                             nick = playerNick,
                             score = playerScore,
                             time = timestamp
@@ -92,6 +94,33 @@ public class Program {
                         playerName1 = Console.ReadLine();
                     }
                     await Database.deletePlayerByGame(gameName2, playerName1);
+                    break;
+                case 5:
+                    Console.WriteLine("Podaj nazwe gry:");
+                    string gameName3 = Console.ReadLine();
+                    Console.WriteLine("Podaj nazwe gracza: ");
+                    string playerName2 = Console.ReadLine();
+                    while (gameName3 == null || gameName3 == "" || playerName2 == null || playerName2 == "")
+                    {
+                        Console.WriteLine("Podaj nazwe gry:");
+                        gameName3 = Console.ReadLine();
+                        Console.WriteLine("Podaj nazwe gracza: ");
+                        playerName2 = Console.ReadLine();
+                    }
+                    Console.WriteLine("1. Score");
+                    Console.WriteLine("2. Time");
+                    int wybor3 = Convert.ToInt32(Console.ReadLine());
+                    switch(wybor3)
+                    {
+                        case 1:
+                            Console.WriteLine("Podaj wynik:");
+                            int score = Convert.ToInt32(Console.ReadLine());
+                            await Database.updatePlayerScoreByGame(gameName3, playerName2, score);
+                            break;
+                        case 2:
+                            await Database.updatePlayerTimeByGame(gameName3, playerName2, timestamp);
+                            break;
+                    }
                     break;
             }
         }
