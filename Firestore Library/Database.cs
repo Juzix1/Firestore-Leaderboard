@@ -5,7 +5,13 @@ using System.Numerics;
 
 namespace Firestore_Library {
     public class Database {
+
         private static readonly string projectName = "csharpfirebase-8de5b";
+        /// <summary>
+        /// Wyświetla Wszystkie rekordy graczy z bazy danych
+        /// </summary>
+        /// <param name="gameName"></param>
+        /// <returns></returns>
         public static async Task getCollectionPlayers(string gameName) {
 
             FirestoreDb db = FirestoreDb.Create(projectName);
@@ -32,6 +38,12 @@ namespace Firestore_Library {
 
 
         }
+        /// <summary>
+        /// Implementuje Listener który nasłuchuje zmian w bazie danych na bieżąco.
+        /// </summary>
+        /// <param name="gameName"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
         public static async Task getPlayersByGameRealtime(string gameName, CancellationToken token) {
             FirestoreDb db = FirestoreDb.Create(projectName);
 
@@ -63,7 +75,12 @@ namespace Firestore_Library {
 
             });
         }
-
+        /// <summary>
+        /// Dodaje gracza do istniejącej gry
+        /// </summary>
+        /// <param name="gameName"></param>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public static async Task addPlayerByGame(string gameName, Player player)
         {
             FirestoreDb db = FirestoreDb.Create(projectName);
@@ -79,6 +96,11 @@ namespace Firestore_Library {
                 Console.WriteLine(ex.Message);
             }
         }
+        /// <summary>
+        /// Metoda dodająca Kategorię gry, wprowadza się jej nazwę
+        /// </summary>
+        /// <param name="gameName"></param>
+        /// <returns></returns>
         public static async Task addGame(string gameName)
         {
             FirestoreDb db = FirestoreDb.Create(projectName);
@@ -94,7 +116,13 @@ namespace Firestore_Library {
                 Console.WriteLine("Dodanie gry do bazy danych nie powiodlo sie pomyslnie. Prawdopodobnie taka gra już istnieje");
             }
         }
-
+        /// <summary>
+        /// Aktualizacja wartości wyniku dla gracza
+        /// </summary>
+        /// <param name="gameName"></param>
+        /// <param name="playerID"></param>
+        /// <param name="score"></param>
+        /// <returns></returns>
         public static async Task updatePlayerScoreByGame(string gameName, string playerID, int score)
         {
             FirestoreDb db = FirestoreDb.Create(projectName);
@@ -110,6 +138,13 @@ namespace Firestore_Library {
                 Console.WriteLine("Zmiana wyniku gracza nie powiodla sie pomyslnie");
             }
         }
+        /// <summary>
+        /// Aktualizacja wartości czasu timera dla gracza
+        /// </summary>
+        /// <param name="gameName"></param>
+        /// <param name="playerID"></param>
+        /// <param name="timestamp"></param>
+        /// <returns></returns>
         public static async Task updatePlayerTimeByGame(string gameName, string playerID, Timestamp timestamp)
         {
             FirestoreDb db = FirestoreDb.Create(projectName);
@@ -126,6 +161,12 @@ namespace Firestore_Library {
             }
         }
 
+        /// <summary>
+        /// Metoda usuwająca gracza z bazy danych
+        /// </summary>
+        /// <param name="gameName"></param>
+        /// <param name="playerID"></param>
+        /// <returns></returns>
         public static async Task deletePlayerByGame(string gameName, string playerID)
         {
             FirestoreDb db = FirestoreDb.Create(projectName);
@@ -133,7 +174,11 @@ namespace Firestore_Library {
             DocumentReference docRef = db.Collection("Games").Document(gameName).Collection("Players").Document(playerID);
             await docRef.DeleteAsync();
         }
-
+        /// <summary>
+        /// Metoda usuwająca kategorię gry z bazy danych
+        /// </summary>
+        /// <param name="gameName"></param>
+        /// <returns></returns>
         public static async Task deleteGame(string gameName)
         {
             FirestoreDb db = FirestoreDb.Create(projectName);

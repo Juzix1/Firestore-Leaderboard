@@ -6,10 +6,18 @@ using Google.Cloud.Firestore;
 using Firestore_Library;
 using Google.Cloud.Firestore.V1;
 
-
+/// <summary>
+/// Główna klasa programu, realizująca interakcję z użytkownikiem w konsoli.
+/// Pozwala na zarządzanie grami i graczami w bazie danych Firestore.
+/// </summary>
 public class Program {
+    /// <summary>
+    /// Punkt wejścia do aplikacji konsolowej.
+    /// </summary>
+    /// <param name="args">Argumenty przekazane z wiersza poleceń (niewykorzystywane).</param>
     private static async Task Main(string[] args) {
         var cts = new CancellationTokenSource();
+
         while (true) {
         Console.Clear();
         Console.WriteLine("Leaderboard");
@@ -124,30 +132,6 @@ public class Program {
                     break;
             }
         }
-    }
-
-    public static void getRealTime(string project) {
-
-       /* FirestoreDb db = FirestoreDb.Create(project);
-
-        Query query = db.Collection("cities").WhereEqualTo("State", "CA");
-
-        FirestoreChangeListener listener = query.Listen(snapshot => {
-            Console.Clear();
-            foreach (DocumentChange change in snapshot.Changes) {
-                if (change.ChangeType.ToString() == "Added") {
-                    Console.WriteLine("New City: {0}", change.Document.Id);
-
-                } else if (change.ChangeType.ToString() == "Modified") {
-                    Console.WriteLine("Modified City: {0}", change.Document.Id);
-
-                } else if (change.ChangeType.ToString() == "Removed") {
-                    Console.WriteLine("Removed City: {0}", change.Document.Id);
-                }
-            }
-
-        });*/
-
     }
 }
     
