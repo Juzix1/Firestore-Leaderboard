@@ -22,12 +22,13 @@
     <HtmlHelpName>Documentation</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
-      <DocumentationSource sourceFile="Firestore-Leaderboard\Firestore Library\bin\Debug\net8.0\Firestore Library.dll" />
-<DocumentationSource sourceFile="Firestore-Leaderboard\GUI\bin\Debug\net8.0-windows\Firestore Library.xml" />
-<DocumentationSource sourceFile="Firestore-Leaderboard\GUI\bin\Debug\net8.0-windows\GUI.exe" />
-<DocumentationSource sourceFile="Firestore-Leaderboard\LeaderBoard\bin\Debug\net8.0\LeaderBoard.exe" />
-<DocumentationSource sourceFile="Firestore-Leaderboard\LeaderBoard\bin\Debug\net8.0\LeaderBoard.xml" />
-<DocumentationSource sourceFile="Firestore-Leaderboard\GUI\bin\Debug\net8.0-windows\GUI.dll" /></DocumentationSources>
+      <DocumentationSource sourceFile="Firestore Library\bin\Debug\net8.0\Firestore Library.dll" />
+      <DocumentationSource sourceFile="Firestore Library\bin\Debug\net8.0\Firestore Library.xml" />
+      <DocumentationSource sourceFile="GUI\bin\Debug\net8.0-windows\GUI.dll" />
+      <DocumentationSource sourceFile="GUI\bin\Debug\net8.0-windows\GUI.exe" />
+      <DocumentationSource sourceFile="LeaderBoard\bin\Debug\net8.0\LeaderBoard.dll" />
+      <DocumentationSource sourceFile="LeaderBoard\bin\Debug\net8.0\LeaderBoard.xml" />
+    </DocumentationSources>
     <HelpFileFormat>Website</HelpFileFormat>
     <SyntaxFilters>Standard</SyntaxFilters>
     <PresentationStyle>Default2022</PresentationStyle>
@@ -72,14 +73,17 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Firestore Library">
+      <HintPath>Firestore Library\bin\Debug\net8.0\Firestore Library.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Cloud.Firestore">
-      <HintPath>Firestore-Leaderboard\LeaderBoard\bin\Debug\net8.0\Google.Cloud.Firestore.dll</HintPath>
+      <HintPath>LeaderBoard\bin\Debug\net8.0\Google.Cloud.Firestore.dll</HintPath>
     </Reference>
     <Reference Include="GUI">
-      <HintPath>Firestore-Leaderboard\GUI\bin\Debug\net8.0-windows\GUI.dll</HintPath>
+      <HintPath>GUI\bin\Debug\net8.0-windows\GUI.dll</HintPath>
     </Reference>
     <Reference Include="LeaderBoard">
-      <HintPath>Firestore-Leaderboard\LeaderBoard\bin\Debug\net8.0\LeaderBoard.dll</HintPath>
+      <HintPath>LeaderBoard\bin\Debug\net8.0\LeaderBoard.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
